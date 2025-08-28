@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "AIチャット目次 (Gemini用)",
+  "version": "1.1",
+  "description": "Geminiのチャット履歴から目次を作成します。",
+
+  "permissions": [
+    "activeTab",
+    "*://gemini.google.com/*"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://gemini.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+B",
+        "mac": "Command+Shift+B"
+      },
+      "description": "ポップアップを開きます"
+    }
+  }
+}
